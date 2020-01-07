@@ -1,13 +1,4 @@
-# advanced-angular-bootstrap-components
-
-This library is a work in progress that will contain some advanced Angular components.
-
-## Build the project and view the library components.
-1) npm install
-2) npm run start
-
-
-# 1) ScrollingTabs
+# ScrollingTabs
 This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4.
 
 ## Getting started
@@ -27,3 +18,5 @@ This component is a scrollable responsive tab component build on Angular 8 and B
         Tab 2 content
     </ngcScrollingTab>
 </ngc-scrolling-tabs>
+
+

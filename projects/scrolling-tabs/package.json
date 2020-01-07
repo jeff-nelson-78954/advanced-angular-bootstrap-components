@@ -1,0 +1,30 @@
+{
+  "name": "ngc-scrolling-tabs",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "bootstrap": "4.4.1"
+  },
+  "description": "This component gives you a responsive bootstrap tabs component to use with angular 8+",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "ng test scrolling-tabs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components.git"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "scrolling",
+    "tabs"
+  ],
+  "author": "Jeff Nelson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components/issues"
+  },
+  "homepage": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components#readme"
+}
