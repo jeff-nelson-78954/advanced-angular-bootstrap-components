@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build-libs && ng serve -o --port 4500",
-    "build": "ng build",
-    "build-libs": "npm run build-scrolling-tabs",
-    "build-scrolling-tabs": "ng build scrolling-tabs ",
+    "build-scrolling-tabs": "ng build scrolling-tabs",
+    "lint-scrolling-tabs": "ng lint scrolling-tabs",
+    "test-scrolling-tabs": "ng test scrolling-tabs --watch=false",
     "publish-scrolling-tabs": "npm run build-scrolling-tabs && cd dist/scrolling-tabs && npm publish",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "npm run build-libs && ng serve -o --port 4500",
+    "test": "npm run test-scrolling-tabs",
+    "lint": "npm run lint-scrolling-tabs",
+    "build-libs": "npm run build-scrolling-tabs"
   },
   "private": true,
   "dependencies": {

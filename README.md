@@ -12,7 +12,7 @@ npm run start
 This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4. 
  The left and right nav buttons will scroll one tab at a time. The component will track what tab is open
  and re-navigate to the open tab when the screen is refreshed. Any bootstrap theme or tab styling will 
- automatically apply to this component. The Component should be placed in a container and the angular 
+ automatically apply to this component. The component should be placed in a container and the angular 
  routing module should be configured in the consuming app.
 
 ## Getting started

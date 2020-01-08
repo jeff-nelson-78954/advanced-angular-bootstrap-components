@@ -57,7 +57,7 @@ export class ScrollingTabsComponent implements AfterViewInit {
   }
 
   @HostListener('window:resize')
-  clickInsideComponent() {
+  windowResize() {
     this.redrawTabs();
   }
 
@@ -124,7 +124,9 @@ export class ScrollingTabsComponent implements AfterViewInit {
 
     // change the view to set the active tab as first tab on the left
     for (let i = 0; i < activeTab; i++) {
-      this.leftOffset -= this.tabList.nativeElement.children[i].offsetWidth;
+      if (this.tabList.nativeElement.children[i]) {
+        this.leftOffset -= this.tabList.nativeElement.children[i].offsetWidth;
+      }
     }
   }
 

@@ -1,13 +1,13 @@
 {
   "name": "ngc-scrolling-tabs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@angular/router": "^8.2.13",
     "bootstrap": "4.4.1"
   },
-  "description": "This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4. The left and right nav buttons will scroll one tab at a time. The component will track what tab is open and re-navigate to the open tab when the screen is refreshed. Any bootstrap theme or tab styling will automatically apply to this component.  The Component should be placed in a container and the angular routing module should be configured in the consuming app.",
+  "description": "This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4. The left and right nav buttons will scroll one tab at a time. The component will track what tab is open and re-navigate to the open tab when the screen is refreshed. Any bootstrap theme or tab styling will automatically apply to this component.  The component should be placed in a container and the angular routing module should be configured in the consuming app.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "ng test scrolling-tabs"
