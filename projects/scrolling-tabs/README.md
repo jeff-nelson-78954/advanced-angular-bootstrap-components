@@ -25,7 +25,7 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 
 ## Example
 ```shell
-<ngc-scrolling-tabs [firstTabActive]="true" [scrollToActive]="true" [trackOpenTab]="false">
+<ngc-scrolling-tabs [firstTabActive]="true" [scrollToActive]="true" [trackOpenTab]="false" (selectedTabChanged)="onSelectedTabChanged($event)">
     <ngcScrollingTab id="home" title="Home">
         Tab 1 content
     </ngcScrollingTab>

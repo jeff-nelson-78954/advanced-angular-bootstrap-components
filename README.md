@@ -41,7 +41,7 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 
 ## Example
 ```shell
-<ngc-scrolling-tabs [firstTabActive]="true" [scrollToActive]="true" [trackOpenTab]="false">
+<ngc-scrolling-tabs [firstTabActive]="true" [scrollToActive]="true" [trackOpenTab]="false" (selectedTabChanged)="onSelectedTabChanged($event)">
     <ngcScrollingTab id="home" title="Home">
         Tab 1 content
     </ngcScrollingTab>
@@ -86,7 +86,7 @@ import { SearchInputModule } from 'ngc-search-input';
 
 ## Example
 ```shell
-<ngc-search-input [config]="configSettings"></ngc-search-input>
+<ngc-search-input [config]="configSettings" (searchInputChanged)="onSearchInputChanged($event)"></ngc-search-input>
 ```
 
 ![Search Input](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/searchinput.png)
