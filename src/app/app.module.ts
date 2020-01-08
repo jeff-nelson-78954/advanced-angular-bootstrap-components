@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ScrollingTabsModule } from 'scrolling-tabs';
+import { SearchInputModule } from 'search-input';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ScrollingTabsModule } from 'scrolling-tabs';
   imports: [
     BrowserModule,
     ScrollingTabsModule,
+    SearchInputModule,
     RouterModule.forRoot([])
   ],
   exports: [

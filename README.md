@@ -8,7 +8,12 @@ npm install
 npm run start
 ```
 
-# ScrollingTabs
+## Table of Contents
+- [ScrollingTabs](#scrolling-tabs)
+- [SearchInput](#search-input)
+- [Adding component to the library](#adding-component-to-the-library)
+
+# Scrolling Tabs
 This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4. 
  The left and right nav buttons will scroll one tab at a time. The component will track what tab is open
  and re-navigate to the open tab when the screen is refreshed. Any bootstrap theme or tab styling will 
@@ -50,4 +55,49 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 
 ![Scrolling Tabs - Dark Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_dark.png)
 
-# ScrollingTabs
+# Search Input
+This component is a search input field built on Angular 8 and Bootstrap 4. 
+ It listens for input pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field.
+ Can be used to auto search a datasource automatically as a user is typing. Emits a changed event if the input field is cleared.
+
+## Getting started
+- Install the package 
+```shell
+npm install ngc-search-input
+```
+- Add import to your Angular Module 
+```shell
+import { SearchInputModule } from 'ngc-search-input';
+```
+
+## Input
+- [config] -> Used to set multiple settings for the component.
+```shell
+@Input() config = {
+    placeholderText: 'Search...',
+    minSearchLength: 3,
+    searchLengthError: 'Search term must be at least 3 characters',
+    debounceTime: 500
+  };
+```
+
+## Outputs
+(searchInputChanged) -> Fired when the search term is changed and greater than the specified length and not the same as the last emitted value or if the search term is empty.
+
+## Example
+```shell
+<ngc-search-input></ngc-search-input>
+```
+
+![Search Input](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/searchinput.png)
+
+# Adding component to the library
+- Run the following command
+```shell
+ng g library search-input --prefix ngc
+```
+- Change to the directory and init NPM
+```shell
+npm init
+```
+- Add commands to package.json and show the library in the sample app

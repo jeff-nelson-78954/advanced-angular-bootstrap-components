@@ -157,6 +157,41 @@
           }
         }
       }
+    },
+    "search-input": {
+      "projectType": "library",
+      "root": "projects/search-input",
+      "sourceRoot": "projects/search-input/src",
+      "prefix": "ngc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/search-input/tsconfig.lib.json",
+            "project": "projects/search-input/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/search-input/src/test.ts",
+            "tsConfig": "projects/search-input/tsconfig.spec.json",
+            "karmaConfig": "projects/search-input/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/search-input/tsconfig.lib.json",
+              "projects/search-input/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "advanced-angular-bootstrap-components"
 }

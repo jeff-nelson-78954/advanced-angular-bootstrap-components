@@ -24,6 +24,12 @@
       ],
       "scrolling-tabs/*": [
         "dist/scrolling-tabs/*"
+      ],
+      "search-input": [
+        "dist/search-input"
+      ],
+      "search-input/*": [
+        "dist/search-input/*"
       ]
     }
   },

@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components.git"
+    "url": "git+https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components.git"
   },
   "keywords": [
     "angular",
