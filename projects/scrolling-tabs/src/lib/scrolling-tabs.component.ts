@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef,
          ViewChild, AfterViewInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { ScrollingTabDirective } from './scrolling-tab.directive';
 
@@ -15,22 +16,27 @@ export class ScrollingTabsComponent implements AfterViewInit {
 
   @Input() firstTabActive = true;
   @Input() scrollToActive = true;
+  @Input() trackOpenTab = true;
+  @Input() scrollBarWidths = 52;
   @Output() selectedTabChanged = new EventEmitter<ScrollingTabDirective>();
 
   tabs: ScrollingTabDirective[] = [];
-  scrollBarWidths = 52;
   leftOffset = 0;
   firstVisibleTabIndex = -1;
   showLeftArrow = false;
   showRightArrow = false;
 
-  constructor(public changeDetector: ChangeDetectorRef) { }
+  constructor(private changeDetector: ChangeDetectorRef, private route: ActivatedRoute, private router: Router) { }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      if (this.firstTabActive) {
+      // if there is a param of tabId and we want to track open tabs, mark the open tab as active
+      if (this.route.snapshot.queryParams.tabId && this.trackOpenTab) {
+        this.markTabAsActive(this.route.snapshot.queryParams.tabId);
+      } else if (this.firstTabActive) { // if we should mark the first tab as active if a active tab is not specified
         this.markFirstTabActive();
       }
+
       if (this.scrollToActive) {
         this.scrollToActiveTab();
       }
@@ -64,6 +70,7 @@ export class ScrollingTabsComponent implements AfterViewInit {
       this.showRightArrow = false;
     }
 
+    // see if we have scrolled right and we are not at the left most position
     if (this.leftOffset < 0) {
       this.showLeftArrow = true;
     } else {
@@ -95,6 +102,14 @@ export class ScrollingTabsComponent implements AfterViewInit {
     this.redrawTabs();
   }
 
+  onSelectedTabChanged(tab: ScrollingTabDirective) {
+    this.markTabAsActive(tab.id);
+    if (this.trackOpenTab) {
+      this.pushCurrentTabToParam(tab);
+    }
+    this.selectedTabChanged.emit(tab);
+  }
+
   markFirstTabActive() {
     const activeTab = this.tabs.find(t => t.active);
     //  if there is no active tab and we have tabs set first one to active
@@ -113,13 +128,22 @@ export class ScrollingTabsComponent implements AfterViewInit {
     }
   }
 
-  onSelectedTabChanged(tab: ScrollingTabDirective) {
+  markTabAsActive(tabId: any) {
     for (const t of this.tabs) {
       t.active = false;
-      if (t.id === tab.id) {
+      if (t.id === tabId) {
         t.active = true;
       }
     }
-    this.selectedTabChanged.emit(tab);
+  }
+
+  pushCurrentTabToParam(tab: ScrollingTabDirective) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        tabId: tab.id
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 }

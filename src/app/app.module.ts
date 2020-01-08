@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ScrollingTabsModule } from 'scrolling-tabs';
@@ -10,7 +11,11 @@ import { ScrollingTabsModule } from 'scrolling-tabs';
   ],
   imports: [
     BrowserModule,
-    ScrollingTabsModule
+    ScrollingTabsModule,
+    RouterModule.forRoot([])
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

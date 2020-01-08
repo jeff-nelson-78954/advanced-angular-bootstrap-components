@@ -19,7 +19,7 @@
         <div class="nav-wrapper" #navWrapper>
             <ul class="nav nav-tabs list" role="tablist" #tabList [style.left.px]="leftOffset">
                 <li *ngFor="let tab of tabs" class="nav-item">
-                    <a [ngClass]="tab.getTabClasses()" data-toggle="tab" href="#{{tab.id}}" role="tab"
+                    <a [ngClass]="tab.getTabClasses()" data-toggle="tab" href="javascript:void(0)" role="tab"
                         attr.aria-controls="{{tab.title}}" (click)="onSelectedTabChanged(tab)">{{tab.title}}</a>
                 </li>
             </ul>
