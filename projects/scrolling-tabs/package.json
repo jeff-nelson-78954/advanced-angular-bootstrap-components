@@ -1,12 +1,12 @@
 {
   "name": "ngc-scrolling-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "bootstrap": "4.4.1"
   },
-  "description": "This component gives you a responsive bootstrap tabs component to use with angular 8+",
+  "description": "This component is a responsive bootstrap tabs component to use with angular 8+",
   "main": "karma.conf.js",
   "scripts": {
     "test": "ng test scrolling-tabs"

@@ -3,7 +3,15 @@
   margin:0 auto;
   overflow:hidden;
   padding:5px;
-  height:45px;
+  height: 38px;
+}
+
+.nav-tabs {
+  height: 38px;
+}
+
+.nav-link {
+  margin-left: 1px;
 }
 
 .list {
@@ -43,6 +51,7 @@
 
 .arrow-img {
     height: 20px;
+    width: 15px;
 }
 
 .arrow-img:hover {

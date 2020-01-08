@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef,
-         ViewChild, AfterViewInit, HostListener, Input } from '@angular/core';
+         ViewChild, AfterViewInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 import { ScrollingTabDirective } from './scrolling-tab.directive';
 
@@ -15,6 +15,7 @@ export class ScrollingTabsComponent implements AfterViewInit {
 
   @Input() firstTabActive = true;
   @Input() scrollToActive = true;
+  @Output() selectedTabChanged = new EventEmitter<ScrollingTabDirective>();
 
   tabs: ScrollingTabDirective[] = [];
   scrollBarWidths = 52;
@@ -119,5 +120,6 @@ export class ScrollingTabsComponent implements AfterViewInit {
         t.active = true;
       }
     }
+    this.selectedTabChanged.emit(tab);
   }
 }

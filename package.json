@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build-libs && ng serve -o",
+    "start": "npm run build-libs && ng serve -o --port 4500",
     "build": "ng build",
     "build-libs": "npm run build-scrolling-tabs",
     "build-scrolling-tabs": "ng build scrolling-tabs ",
