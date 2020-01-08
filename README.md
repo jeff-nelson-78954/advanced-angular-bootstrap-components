@@ -49,3 +49,5 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 ![Scrolling Tabs - Light Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_light.png)
 
 ![Scrolling Tabs - Dark Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_dark.png)
+
+# ScrollingTabs
