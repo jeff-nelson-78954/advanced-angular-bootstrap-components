@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter, ElementRef, ViewChild, Input, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, Output, EventEmitter, ElementRef, ViewChild, Input,
+         AfterViewInit, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -6,19 +7,24 @@ import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
   selector: 'ngc-search-input',
   templateUrl: './search-input.component.html'
 })
-export class SearchInputComponent implements AfterViewInit, OnDestroy  {
+export class SearchInputComponent implements AfterViewInit, OnDestroy, OnInit  {
   @ViewChild('txtSearchInput', { static: false }) txtSearchInput: ElementRef;
-  @Input() config = {
+  @Input() config: any = {};
+  @Output() searchInputChanged = new EventEmitter<string>();
+  searchSubscription: Subscription;
+  smallSearchTermError = false;
+  defaultSettings = {
     placeholderText: 'Search...',
     minSearchLength: 3,
     searchLengthError: 'Search term must be at least 3 characters',
     debounceTime: 500
   };
-  @Output() searchInputChanged = new EventEmitter<string>();
-  searchSubscription: Subscription;
-  smallSearchTermError = false;
 
   constructor(public changeDetector: ChangeDetectorRef) { }
+
+  ngOnInit() {
+    this.config = Object.assign(this.defaultSettings, this.config);
+  }
 
   ngAfterViewInit() {
     this.listenForSearch();

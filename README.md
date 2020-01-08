@@ -57,7 +57,7 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 
 # Search Input
 This component is a search input field built on Angular 8 and Bootstrap 4. 
- It listens for input pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field.
+ It listens for input, pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field.
  Can be used to auto search a datasource automatically as a user is typing. Emits a changed event if the input field is cleared.
 
 ## Getting started
@@ -71,7 +71,7 @@ import { SearchInputModule } from 'ngc-search-input';
 ```
 
 ## Input
-- [config] -> Used to set multiple settings for the component.
+- [config] -> Used to set multiple settings for the component. Pass in config object with the values you want to change.
 ```shell
 @Input() config = {
     placeholderText: 'Search...',
@@ -86,12 +86,12 @@ import { SearchInputModule } from 'ngc-search-input';
 
 ## Example
 ```shell
-<ngc-search-input></ngc-search-input>
+<ngc-search-input [config]="configSettings"></ngc-search-input>
 ```
 
 ![Search Input](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/searchinput.png)
 
-# Adding component to the library
+# Adding components to the library
 - Run the following command
 ```shell
 ng g library search-input --prefix ngc

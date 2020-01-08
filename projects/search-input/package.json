@@ -1,12 +1,12 @@
 {
   "name": "ngc-search-input",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "bootstrap": "4.4.1"
   },
-  "description": "This component is a search input field built on Angular 8 and Bootstrap 4. It listens for input pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field. Can be used to auto search a datasource automatically as a user is typing. Emits a changed event if the input field is cleared.",
+  "description": "This component is a search input field built on Angular 8 and Bootstrap 4. It listens for input, pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field. Can be used to auto search a datasource automatically as a user is typing. Emits a changed event if the input field is cleared.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "ng test search-input"

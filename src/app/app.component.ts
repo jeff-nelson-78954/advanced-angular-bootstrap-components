@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'advanced-angular-bootstrap-components';
+  configSettings = { placeholderText: 'Search Me' };
 }
