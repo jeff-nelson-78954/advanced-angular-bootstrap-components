@@ -21,6 +21,7 @@ class PaginationMetadata {
                 public totalCount: number = 0, public hasPrevious: boolean = false, public hasNext: boolean = false) {
     }
 }
+```
 - [floatRight] -> Will push the component to the right on larger screens. Default: false
 - [resultsHeader] -> Sets the text that will be shown in front of the result count. Default: 'Total Results:'
 - [pageSizes] -> A array of integers that will be used to generate the available list of page sizes. Default [5, 10, 25, 50, 100]
