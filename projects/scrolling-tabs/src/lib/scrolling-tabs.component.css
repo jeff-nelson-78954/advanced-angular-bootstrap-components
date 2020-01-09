@@ -8,9 +8,10 @@
 
 .nav-tabs {
   height: 38px;
+  margin-left: 1px;
 }
 
-.nav-link {
+.tab-content {
   margin-left: 1px;
 }
 

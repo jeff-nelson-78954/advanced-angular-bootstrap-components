@@ -33,7 +33,7 @@ class PaginationMetadata {
 ## Example
 ```shell
 <ngc-pager  [pageinationMetaData]="pageinationMetaData"
-            [floatRight]="true",
+            [floatRight]="true"
             [resultsHeader]="'Total:'"
             [pageSizes]="pageSizeArray"
             (pagerChanged)="onPagerChanged">

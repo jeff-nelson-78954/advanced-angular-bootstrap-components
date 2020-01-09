@@ -14,13 +14,13 @@ npm install ngc-scrolling-tabs
 ```shell
 import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 ```
-## Input options
-- [firstTabActive] -> Used on page load, if the active tab is not specified the first tab will be marked as active.
-- [scrollToActive] -> Used on page load, the active tab that is marked active will be scrolled to.
-- [trackOpenTab] -> Used to track what tab is open as a url parameter. If the page is refreshed it will default to that tab.
-- [scrollBarWidths] -> If your styles affect the scroll bar widths you will need to adjust this setting so tab scrolling continues to work properly.
 
-## Output
+## Inputs
+- [firstTabActive] -> Used on page load, if the active tab is not specified the first tab will be marked as active. Default: true
+- [scrollToActive] -> Used on page load, the active tab that is marked active will be scrolled to if there are hidden tabs. Default: true
+- [trackOpenTab] -> Used to track what tab is open as a url parameter. If the page is refreshed it will default to that tab. Default: true
+
+## Outputs
 (selectedTabChanged) -> Fired when a user changes tabs.
 
 ## Example

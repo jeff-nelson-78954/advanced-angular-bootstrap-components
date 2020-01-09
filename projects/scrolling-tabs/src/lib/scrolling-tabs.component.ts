@@ -17,7 +17,6 @@ export class ScrollingTabsComponent implements AfterViewInit {
   @Input() firstTabActive = true;
   @Input() scrollToActive = true;
   @Input() trackOpenTab = true;
-  @Input() scrollBarWidths = 52;
   @Output() selectedTabChanged = new EventEmitter<ScrollingTabDirective>();
 
   tabs: ScrollingTabDirective[] = [];
@@ -30,14 +29,15 @@ export class ScrollingTabsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      // if there is a param of tabId and we want to track open tabs, mark the open tab as active
+      // if there is a param of tabId and we want to track open tabs mark the open tab as active
       if (this.route.snapshot.queryParams.tabId && this.trackOpenTab) {
         this.markTabAsActive(this.route.snapshot.queryParams.tabId);
       } else if (this.firstTabActive) { // if we should mark the first tab as active if a active tab is not specified
         this.markFirstTabActive();
       }
 
-      if (this.scrollToActive) {
+      // scroll to the active tab if setting is true and the tabs are larger than the window
+      if (this.scrollToActive && this.hasHiddenTabs()) {
         this.scrollToActiveTab();
       }
       this.redrawTabs();
@@ -121,13 +121,15 @@ export class ScrollingTabsComponent implements AfterViewInit {
   scrollToActiveTab() {
     const activeTab = this.tabs.findIndex(t => t.active);
     this.firstVisibleTabIndex = activeTab;
-
-    // change the view to set the active tab as first tab on the left
     for (let i = 0; i < activeTab; i++) {
       if (this.tabList.nativeElement.children[i]) {
         this.leftOffset -= this.tabList.nativeElement.children[i].offsetWidth;
       }
     }
+  }
+
+  hasHiddenTabs() {
+    return this.widthOfList() > this.navWrapper.nativeElement.offsetWidth;
   }
 
   markTabAsActive(tabId: any) {
