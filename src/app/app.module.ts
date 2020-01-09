@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ScrollingTabsModule } from 'scrolling-tabs';
 import { SearchInputModule } from 'search-input';
+import { PagerModule } from 'pager';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SearchInputModule } from 'search-input';
     BrowserModule,
     ScrollingTabsModule,
     SearchInputModule,
+    PagerModule,
     RouterModule.forRoot([])
   ],
   exports: [

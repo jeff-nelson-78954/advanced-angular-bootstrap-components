@@ -1,0 +1,30 @@
+<section *ngIf="pageinationMetaData" [ngClass]="[floatRight ? 'float-right' : 'float-left', 'site-pager']">
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <span class="pager-form-control">
+                <label class="mr-2">{{resultsHeader}} {{pageinationMetaData.totalCount}}</label>
+            </span>
+            <button *ngIf="pageinationMetaData.hasPrevious"
+                class="btn btn-sm btn-outline-primary mr-2 pager-form-control btnPreviousPage" type="button"
+                (click)="onPageChanged(pageinationMetaData.currentPage - 1)"><i class="fa fa-arrow-left mr-1"
+                    aria-hidden="true"></i>Previous</button>
+            <button *ngIf="pageinationMetaData.hasNext"
+                class="btn btn-sm btn-outline-primary mr-2 pager-form-control btnNextPage" type="button"
+                (click)="onPageChanged(pageinationMetaData.currentPage + 1)">Next<i class="fa fa-arrow-right ml-1"
+                    aria-hidden="true"></i></button>
+            <span class="pager-form-control">
+                <span *ngIf="pageinationMetaData && pageinationMetaData.totalPages > 1">
+                    <label class="mr-1">Page: </label>
+                    <select class="form-control form-control-sm mr-2" (change)="onPageChanged($event.target.value)">
+                        <option *ngFor="let item of [].constructor(pageinationMetaData.totalPages); let i = index;"
+                            [selected]="i + 1 === pageinationMetaData.currentPage" [value]="i + 1">{{i + 1}}</option>
+                    </select>
+                </span>
+                <label class="mr-1">Showing: </label>
+                <select class="form-control form-control-sm mr-2" (change)="onPageSizeChanged($event.target.value)">
+                    <option *ngFor="let pageSize of pageSizes" [value]="pageSize" [selected]="pageinationMetaData.pageSize === pageSize">{{pageSize}}</option>
+                </select>
+            </span>
+        </div>
+    </div>
+</section>

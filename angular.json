@@ -192,6 +192,41 @@
           }
         }
       }
+    },
+    "pager": {
+      "projectType": "library",
+      "root": "projects/pager",
+      "sourceRoot": "projects/pager/src",
+      "prefix": "ngc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pager/tsconfig.lib.json",
+            "project": "projects/pager/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pager/src/test.ts",
+            "tsConfig": "projects/pager/tsconfig.spec.json",
+            "karmaConfig": "projects/pager/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pager/tsconfig.lib.json",
+              "projects/pager/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "advanced-angular-bootstrap-components"
 }

@@ -1,0 +1,27 @@
+.page-link:hover, .page-link:focus, .page-link:active {
+    cursor: pointer;
+}
+li.active .page-link:hover, li.active .page-link:focus, li.active .page-link:active {
+    cursor: default;
+    color: #fff;
+}
+
+.site-pager select {
+    width: 70px;
+    display: inline;
+}
+
+@media (max-width: 575px) {
+    .pager-form-control {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .site-pager {
+        float:none !important;
+    }
+    .pager-form-control label {
+        margin-bottom: 0;
+    }
+}

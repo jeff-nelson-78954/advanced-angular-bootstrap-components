@@ -1,0 +1,28 @@
+{
+  "name": "ngc-pager",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "description": "",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components.git"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "pager"
+  ],
+  "author": "Jeff Nelson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components/issues"
+  },
+  "homepage": "https://github.com/jeff-nelson-78954/advanced-angular-bootstrap-components#readme"
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PaginationMetadata } from 'pager';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'advanced-angular-bootstrap-components';
   configSettings = { placeholderText: 'Search Me' };
+  pageinationMetaData = new PaginationMetadata();
 }

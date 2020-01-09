@@ -30,6 +30,12 @@
       ],
       "search-input/*": [
         "dist/search-input/*"
+      ],
+      "pager": [
+        "dist/pager"
+      ],
+      "pager/*": [
+        "dist/pager/*"
       ]
     }
   },

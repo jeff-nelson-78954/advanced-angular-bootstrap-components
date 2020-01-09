@@ -7,16 +7,18 @@
     "lint-scrolling-tabs": "ng lint scrolling-tabs",
     "test-scrolling-tabs": "ng test scrolling-tabs --watch=false",
     "publish-scrolling-tabs": "npm run build-scrolling-tabs && cd dist/scrolling-tabs && npm publish",
-
     "build-search-input": "ng build search-input",
     "lint-search-input": "ng lint search-input",
     "test-search-input": "ng test search-input --watch=false",
     "publish-search-input": "npm run build-search-input && cd dist/search-input && npm publish",
-
+    "build-pager": "ng build pager",
+    "lint-pager": "ng lint pager",
+    "test-pager": "ng test pager --watch=false",
+    "publish-pager": "npm run build-pager && cd dist/pager && npm publish",
     "start": "npm run build-libs && ng serve -o --port 4500",
-    "build-libs": "npm run build-scrolling-tabs && npm run build-search-input",
-    "test": "npm run test-scrolling-tabs && npm run test-search-input",
-    "lint": "npm run lint-scrolling-tabs && npm run lint-search-input"
+    "build-libs": "npm run build-scrolling-tabs && npm run build-search-input && npm run build-pager",
+    "test": "npm run test-scrolling-tabs && npm run test-search-input && npm run test-pager",
+    "lint": "npm run lint-scrolling-tabs && npm run lint-search-input && npm run lint-input"
   },
   "private": true,
   "dependencies": {

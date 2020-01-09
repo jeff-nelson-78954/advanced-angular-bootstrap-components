@@ -1,4 +1,17 @@
 <div class="container">
+  <h1>Pager</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <ngc-pager [pageinationMetaData]="pageinationMetaData"
+                 [floatRight]="true",
+                 [resultsHeader]="'Total:'"
+                 [pageSizes]="pageSizeArray"
+                 (pagerChanged)="onPagerChanged">
+      </ngc-pager>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
   <h1>Search Input</h1>
   <div class="row">
     <div class="col-md-12">

@@ -11,6 +11,7 @@ npm run start
 ## Table of Contents
 - [ScrollingTabs](#scrolling-tabs)
 - [SearchInput](#search-input)
+- [Pager](#pager)
 - [Adding component to the library](#adding-component-to-the-library)
 
 # Scrolling Tabs
@@ -31,10 +32,10 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 ```
 
 ## Inputs
-- [firstTabActive] -> Used on page load, if the active tab is not specified the first tab will be marked as active.
-- [scrollToActive] -> Used on page load, the active tab that is marked active will be scrolled to.
-- [trackOpenTab] -> Used to track what tab is open as a url parameter. If the page is refreshed it will default to that tab.
-- [scrollBarWidths] -> If your styles affect the scroll bar widths you will need to adjust this setting so tab scrolling continues to work properly.
+- [firstTabActive] -> Used on page load, if the active tab is not specified the first tab will be marked as active. Default: true
+- [scrollToActive] -> Used on page load, the active tab that is marked active will be scrolled to. Default: true
+- [trackOpenTab] -> Used to track what tab is open as a url parameter. If the page is refreshed it will default to that tab. Default: true
+- [scrollBarWidths] -> If your styles affect the scroll bar widths you will need to adjust this setting so tab scrolling continues to work properly. Default: 52
 
 ## Outputs
 (selectedTabChanged) -> Fired when a user changes tabs.
@@ -55,6 +56,47 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 
 ![Scrolling Tabs - Dark Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_dark.png)
 
+# Pager
+This component is a responsive pager component build on Angular 8 and Bootstrap 4.
+
+## Getting started
+- Install the package 
+```shell
+npm install ngc-pager
+```
+- Add import to your Angular Module 
+```shell
+import { PagerModule } from 'ngc-pager';
+```
+
+## Inputs
+- [pageinationMetaData] -> Object used to hold and pass page data. Object and default values below.
+```shell
+class PaginationMetadata {
+    constructor(public currentPage: number = 1, public totalPages: number = 0, public pageSize: number = 25,
+                public totalCount: number = 0, public hasPrevious: boolean = false, public hasNext: boolean = false) {
+    }
+}
+- [floatRight] -> Will push the component to the right on larger screens. Default: false
+- [resultsHeader] -> Sets the text that will be shown in front of the result count. Default: 'Total Results:'
+- [pageSizes] -> A array of integers that will be used to generate the available list of page sizes. Default [5, 10, 25, 50, 100]
+
+
+## Outputs
+(pagerChanged) -> Fired when page or pagesize changes.
+
+## Example
+```shell
+<ngc-pager  [pageinationMetaData]="pageinationMetaData"
+            [floatRight]="true",
+            [resultsHeader]="'Total:'"
+            [pageSizes]="pageSizeArray"
+            (pagerChanged)="onPagerChanged">
+</ngc-pager>
+```
+
+![Scrolling Tabs - Light Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_light.png)
+
 # Search Input
 This component is a search input field built on Angular 8 and Bootstrap 4. 
  It listens for input, pauses for a set duration (default 500 ms), checks for unique values, and then emits the text in the search field.
@@ -71,7 +113,7 @@ import { SearchInputModule } from 'ngc-search-input';
 ```
 
 ## Input
-- [config] -> Used to set multiple settings for the component. Pass in config object with the values you want to change.
+- [config] -> Used to set multiple settings for the component. Pass in config object with the values you want to change. Object with default values listed below.
 ```shell
 @Input() config = {
     placeholderText: 'Search...',
