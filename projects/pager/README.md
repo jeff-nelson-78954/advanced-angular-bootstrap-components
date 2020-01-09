@@ -1,24 +1,42 @@
 # Pager
+This component is a responsive pager component build on Angular 8 and Bootstrap 4. 
+ It keeps track of the total records and number of pages based on page size. It fires a event 
+ when the user changes the page or page size.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Getting started
+- Install the package 
+```shell
+npm install ngc-pager
+```
+- Add import to your Angular Module 
+```shell
+import { PagerModule } from 'ngc-pager';
+```
 
-## Code scaffolding
+## Inputs
+- [pageinationMetaData] -> Object used to hold and pass page data. Object and default values below.
+```shell
+class PaginationMetadata {
+    constructor(public currentPage: number = 1, public totalPages: number = 0, public pageSize: number = 25,
+                public totalCount: number = 0, public hasPrevious: boolean = false, public hasNext: boolean = false) {
+    }
+}
+- [floatRight] -> Will push the component to the right on larger screens. Default: false
+- [resultsHeader] -> Sets the text that will be shown in front of the result count. Default: 'Total Results:'
+- [pageSizes] -> A array of integers that will be used to generate the available list of page sizes. Default [5, 10, 25, 50, 100]
 
-Run `ng generate component component-name --project pager` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project pager`.
-> Note: Don't forget to add `--project pager` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Outputs
+(pagerChanged) -> Fired when page or pagesize changes.
 
-Run `ng build pager` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Example
+```shell
+<ngc-pager  [pageinationMetaData]="pageinationMetaData"
+            [floatRight]="true",
+            [resultsHeader]="'Total:'"
+            [pageSizes]="pageSizeArray"
+            (pagerChanged)="onPagerChanged">
+</ngc-pager>
+```
 
-## Publishing
-
-After building your library with `ng build pager`, go to the dist folder `cd dist/pager` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test pager` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Pager](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/pager.png)

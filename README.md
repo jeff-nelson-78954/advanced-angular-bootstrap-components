@@ -57,7 +57,9 @@ import { ScrollingTabsModule } from 'ngc-scrolling-tabs';
 ![Scrolling Tabs - Dark Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_dark.png)
 
 # Pager
-This component is a responsive pager component build on Angular 8 and Bootstrap 4.
+This component is a responsive pager component build on Angular 8 and Bootstrap 4. 
+ It keeps track of the total records and number of pages based on page size. It fires a event 
+ when the user changes the page or page size.
 
 ## Getting started
 - Install the package 
@@ -95,7 +97,7 @@ class PaginationMetadata {
 </ngc-pager>
 ```
 
-![Scrolling Tabs - Light Theme](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/scrollingtabs_light.png)
+![Pager](https://raw.githubusercontent.com/jeff-nelson-78954/advanced-angular-bootstrap-components/master/assets/pager.png)
 
 # Search Input
 This component is a search input field built on Angular 8 and Bootstrap 4. 

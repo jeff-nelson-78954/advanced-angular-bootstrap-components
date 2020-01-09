@@ -5,7 +5,7 @@
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
   },
-  "description": "",
+  "description": "This component is a responsive pager component build on Angular 8 and Bootstrap 4. It keeps track of the total records and number of pages based on page size. It fires a event when the user changes the page or page size.",
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
