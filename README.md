@@ -12,7 +12,7 @@ npm run start
 - [ScrollingTabs](#scrolling-tabs)
 - [SearchInput](#search-input)
 - [Pager](#pager)
-- [Adding component to the library](#adding-component-to-the-library)
+- [Adding components to the library](#adding-components-to-the-library)
 
 # Scrolling Tabs
 This component is a scrollable responsive tab component build on Angular 8 and Bootstrap 4. 
